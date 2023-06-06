@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function Info() {
+export default function () {
     const [lista, setLista] = useState([
 
     ]);
@@ -24,7 +26,7 @@ export default function Info() {
     return (
         <View style={styles.container}>
             <View style={styles.info}>
-                <Text style={styles.titulo}>Quais apps deseja ficar por dentro?</Text>
+                <Text style={styles.titulo}>Favorite seus apps preferidos!</Text>
             </View>
 
             <View style={styles.conteudo}>
@@ -36,16 +38,19 @@ export default function Info() {
                     placeholderTextColor="grey" // Definindo a cor do placeholder
                 />
                 <TouchableOpacity style={styles.button} onPress={adicionarItem}>
-                    <Text style={styles.buttonText}>Adicionar</Text>
+                    <FontAwesome5 style={styles.posicao} name="star-half" size={24} color="black" />
+                    <Text style={styles.buttonText}>Favoritar</Text>
                 </TouchableOpacity>
 
                 <FlatList
                     data={lista}
                     renderItem={({ item }) => (
                         <View style={styles.item}>
-                            <TouchableOpacity style={styles.removeButton} onPress={() => removerItem(item.key)}>
-                                <Text style={styles.removeButtonText}>Remover</Text>
-                            </TouchableOpacity>
+                            <View style={styles.borda}>
+                                <TouchableOpacity style={styles.removeButton} onPress={() => removerItem(item.key)}>
+                                    <MaterialCommunityIcons name="star-remove" size={28} color="black" />
+                                </TouchableOpacity>
+                            </View>
                             <Text style={styles.itemText}>{item.texto}</Text>
                         </View>
                     )}
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
         backgroundColor: "coral",
         justifyContent: "center",
         alignItems: "center",
-        borderRadius: 30,
+        borderRadius: 20,
     },
     titulo: {
         color: "#fff",
@@ -84,13 +89,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: "coral",
         borderRadius: 4,
-        color: "#fff", // Definindo a cor do texto de entrada
+        color: "black", // Definindo a cor do texto de entrada
     },
     button: {
+        flexDirection: 'row',
+        justifyContent: 'center',
         backgroundColor: "coral",
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 4,
+        borderWidth: 1,
         alignItems: "center",
         marginBottom: 10,
     },
@@ -104,24 +112,41 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         marginBottom: 10,
-        backgroundColor: "#A4C9FF",
+        borderWidth: 1,
+        backgroundColor: "white",
+        borderColor: "coral",
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 4,
     },
     itemText: {
-        paddingLeft: 10,
+        marginLeft: 20,
         fontSize: 16,
     },
+
+    borda: {
+        borderLeftWidth: 0,
+        borderRightWidth: 1,
+        borderTopWidth: 0,
+        borderBottomWidth: 0,
+        padding: 0.5,
+
+    },
+
     removeButton: {
-        backgroundColor: "#171626",
-        paddingHorizontal: 8,
-        paddingVertical: 6,
-        borderRadius: 4,
+        marginRight: 5,
+        right: 5,
+        paddingHorizontal: 7,
+        paddingVertical: 7,
+        borderRadius: 30,
     },
     removeButtonText: {
-        color: "#fff",
-        fontSize: 14,
+        color: "white",
+        fontSize: 18,
         fontWeight: "bold",
     },
+    posicao: {
+        left: 15
+    },
 });
+

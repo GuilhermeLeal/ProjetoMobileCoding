@@ -32,7 +32,7 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="home" size={size} color={"red"} />
+                            return <Ionicons name="home" size={size} color={"coral"} />
                         }
                         return <Ionicons name='home-outline' size={size} color={"coral"} />
                     }
@@ -45,7 +45,7 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="person" size={size} color={"red"} />
+                            return <Ionicons name="person" size={size} color={"coral"} />
                         }
                         return <Ionicons name='person-outline' size={size} color={"coral"} />
                     }
@@ -58,7 +58,7 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="settings" size={size} color={"red"} />
+                            return <Ionicons name="settings" size={size} color={"coral"} />
                         }
                         return <Ionicons name='settings-outline' size={size} color={"coral"} />
                     }
