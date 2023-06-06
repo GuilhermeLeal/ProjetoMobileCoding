@@ -2,19 +2,17 @@
  
 # Game Discount App
 
-![App Logo](./app-logo.png)
+![App Logo](./Prints/download.png)
 
-O Game Discount App é um aplicativo para dispositivos móveis que ajuda os jogadores a encontrar e aproveitar descontos em jogos para várias plataformas. Com uma interface intuitiva e fácil de usar, o aplicativo oferece uma maneira conveniente de descobrir e acompanhar as melhores ofertas em jogos.
+O DeskGames App é um aplicativo para dispositivos móveis que ajuda os jogadores a encontrar e aproveitar descontos em jogos para várias plataformas. Com uma interface intuitiva e fácil de usar, o aplicativo oferece uma maneira conveniente de descobrir e acompanhar as melhores ofertas em jogos.
 
 ## Recursos Principais
 
-- **Descontos em Tempo Real:** O aplicativo exibe os descontos atualizados em tempo real para várias plataformas de jogos, incluindo Steam, Epic Games, PlayStation e Xbox.
+- **Descontos em Tempo Real:** O aplicativo exibe os descontos atualizados em "tempo real" para várias plataformas de jogos, incluindo Steam, Epic Games, PlayStation e Xbox.
 
 - **Navegação por Plataforma:** Os usuários podem explorar os descontos por plataforma, facilitando a busca de ofertas específicas para a plataforma de sua preferência.
 
 - **Notificações Personalizadas:** Os usuários podem configurar notificações personalizadas para receber alertas sobre descontos em jogos de seus interesses ou plataformas favoritas.
-
-- **Avaliações e Comentários:** Os usuários podem ler e compartilhar avaliações e comentários sobre os jogos, fornecendo informações úteis para outros jogadores.
 
 ## Capturas de Tela
 
