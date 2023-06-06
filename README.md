@@ -18,9 +18,9 @@ O Game Discount App é um aplicativo para dispositivos móveis que ajuda os joga
 
 ## Capturas de Tela
 
-![Screenshot 1](./screenshots/screenshot1.png)
-![Screenshot 2](./screenshots/screenshot2.png)
-![Screenshot 3](./screenshots/screenshot3.png)
+![Screenshot 1](./Prints/Screenshot_20230606_010121_Expo_Go.jpg)
+![Screenshot 2](./Prints/Screenshot_20230606_010128_Expo_Go.jpg)
+![Screenshot 3](./Prints/Screenshot_20230606_010133_Expo_Go.jpg)
 
 ## Como Contribuir
 
@@ -33,8 +33,5 @@ Contribuições são bem-vindas! Se você deseja contribuir para o desenvolvimen
 5. Envie suas alterações para o seu fork: `git push origin feature/nova-funcionalidade`.
 6. Abra um pull request neste repositório, descrevendo suas alterações e explicando os benefícios que elas trazem.
 
-## Licença
-
-O Game Discount App está sob a licença MIT. Consulte o arquivo `LICENSE.md` para obter mais informações.
 
 
