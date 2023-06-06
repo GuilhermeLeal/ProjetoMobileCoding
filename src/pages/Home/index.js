@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
         color: "#fff", // Definindo a cor do texto de entrada
     },
     button: {
-        backgroundColor: "#171626",
+        backgroundColor: "coral",
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 4,
