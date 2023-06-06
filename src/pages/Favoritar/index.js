@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -7,6 +7,24 @@ import axios from 'axios';
 export default function Info() {
     const [lista, setLista] = useState([]);
     const [novoItem, setNovoItem] = useState("");
+
+    useEffect(() => {
+        // Carregar os itens do banco de dados quando o componente for montado
+        carregarItens();
+    }, []);
+
+    const carregarItens = () => {
+        // Fazer a solicitação GET para obter todos os itens do banco de dados
+        axios.get('https://647ea7e1c246f166da8f3d38.mockapi.io/AppsFavoritos')
+            .then(response => {
+                // Se a solicitação for bem-sucedida, atualizar o estado com os itens retornados
+                setLista(response.data);
+            })
+            .catch(error => {
+                // Em caso de erro, trate-o adequadamente
+                console.error('Erro ao carregar itens:', error);
+            });
+    };
 
     const adicionarItem = () => {
         if (novoItem) {
