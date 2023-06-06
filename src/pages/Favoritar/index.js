@@ -2,19 +2,27 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import axios from 'axios';
 
 export default function Info() {
-    const [lista, setLista] = useState([
-
-    ]);
-
+    const [lista, setLista] = useState([]);
     const [novoItem, setNovoItem] = useState("");
 
     const adicionarItem = () => {
         if (novoItem) {
             const novoItemObj = { texto: novoItem, key: Date.now().toString() };
-            setLista([...lista, novoItemObj]);
-            setNovoItem("");
+
+            // Fazer a solicitação POST para adicionar o item ao banco de dados
+            axios.post('https://647ea7e1c246f166da8f3d38.mockapi.io/AppsFavoritos', novoItemObj)
+                .then(response => {
+                    // Se a solicitação for bem-sucedida, atualize o estado com o novo item
+                    setLista([...lista, response.data]);
+                    setNovoItem("");
+                })
+                .catch(error => {
+                    // Em caso de erro, trate-o adequadamente
+                    console.error('Erro ao adicionar item:', error);
+                });
         }
     };
 
@@ -70,6 +78,7 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     info: {
+        
         height: 80,
         paddingTop: 38,
         backgroundColor: "black",
