@@ -38,7 +38,7 @@ export default function Info() {
                     placeholderTextColor="grey" // Definindo a cor do placeholder
                 />
                 <TouchableOpacity style={styles.button} onPress={adicionarItem}>
-                    <FontAwesome5 style={styles.posicao} name="star-half" size={24} color="black" />
+                    <FontAwesome5 style={styles.posicao} name="star-half" size={24} color="white" />
                     <Text style={styles.buttonText}>Favoritar</Text>
                 </TouchableOpacity>
 
