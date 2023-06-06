@@ -1,14 +1,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Info from './pages/Info';
+import Home from './pages/Favoritar';
+import Profile from './pages/Perfil';
+import Info from './pages/Configs';
 import { Ionicons } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-function Routes() {
+function TabNavigator() {
     return (
         <Tab.Navigator
             screenOptions={{
@@ -28,45 +28,45 @@ function Routes() {
             }}
         >
             <Tab.Screen
-                name="Home"
+                name="Plataformas"
                 component={Home}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <MaterialIcons name="games" size={24} color="#00BFFF" />
+                            return <MaterialIcons name="games" size={24} color="black" />
                         }
-                        return <MaterialIcons name="games" size={24} color="#00BFFF" />
+                        return <MaterialIcons name="games" size={24} color="black" />
                     }
                 }}
             />
             <Tab.Screen
-                name="Profile"
-                component={Profile}
-                options={{
-                    headerShown: false,
-                    tabBarIcon: ({ size, focused }) => {
-                        if (focused) {
-                            return <AntDesign name="profile" size={24} color="#00BFFF" />
-                        }
-                        return <AntDesign name="profile" size={24} color="#00BFFF" />
-                    }
-                }}
-            />
-            <Tab.Screen
-                name="Info"
+                name="Configurações"
                 component={Info}
                 options={{
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="settings" size={size} color={"#00BFFF"} />
+                            return <Ionicons name="settings" size={size} color={"black"} />
                         }
-                        return <Ionicons name='settings-outline' size={size} color={"#00BFFF"} />
+                        return <Ionicons name='settings' size={size} color={"black"} />
                     }
                 }}
             />
+                <Tab.Screen
+                    name="Perfil"
+                    component={Profile}
+                    options={{
+                        headerShown: false,
+                        tabBarIcon: ({ size, focused }) => {
+                            if (focused) {
+                                return <AntDesign name="profile" size={24} color="black" />
+                            }
+                            return <AntDesign name="profile" size={24} color="black" />
+                        }
+                    }}
+                />
         </Tab.Navigator>
     )
 }
-export default Routes;
+export default TabNavigator;

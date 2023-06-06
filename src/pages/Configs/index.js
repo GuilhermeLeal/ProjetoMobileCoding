@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   profileContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: 30,
+    paddingTop: 40,
   },
   loginArea: {
     backgroundColor: '#f0f0f0',
