@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Info from './pages/Info';
 import { Ionicons } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,9 +34,9 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="home" size={size} color={"coral"} />
+                            return <MaterialIcons name="games" size={24} color="#00BFFF" />
                         }
-                        return <Ionicons name='home-outline' size={size} color={"coral"} />
+                        return <MaterialIcons name="games" size={24} color="#00BFFF" />
                     }
                 }}
             />
@@ -45,9 +47,9 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="person" size={size} color={"coral"} />
+                            return <AntDesign name="profile" size={24} color="#00BFFF" />
                         }
-                        return <Ionicons name='person-outline' size={size} color={"coral"} />
+                        return <AntDesign name="profile" size={24} color="#00BFFF" />
                     }
                 }}
             />
@@ -58,9 +60,9 @@ function Routes() {
                     headerShown: false,
                     tabBarIcon: ({ size, focused }) => {
                         if (focused) {
-                            return <Ionicons name="settings" size={size} color={"coral"} />
+                            return <Ionicons name="settings" size={size} color={"#00BFFF"} />
                         }
-                        return <Ionicons name='settings-outline' size={size} color={"coral"} />
+                        return <Ionicons name='settings-outline' size={size} color={"#00BFFF"} />
                     }
                 }}
             />

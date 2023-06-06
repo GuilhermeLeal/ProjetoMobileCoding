@@ -1,32 +1,93 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { ListItem } from '../Lista/ItemLista';
+import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export function Lista() {
   const data = [
-    { key: 1, name: 'Davy Woolley', imagem: 'https://forbes.com.br/wp-content/uploads/2023/01/LIFE_Kobe_Bryant_celebra-768x512.jpg' },
-    { key: 2, name: 'GuizGuizess', imagem: 'https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2022/12/316500764-595935365633385-649521050041578142-n.jpg' },
-    { key: 3, name: 'Lucas Nobre', imagem: 'https://i.em.com.br/UCf-MiUZI1xTxEqcWzmkmSoYzVY=/820x0/smart/imgsapp.em.com.br/app/noticia_127983242361/2022/11/21/1423434/neymar_1_32099.jpg' },
-    { key: 4, name: 'Leleo', imagem: 'https://tntsports.com.br/__export/1680798778827/sites/esporteinterativo/img/2023/04/06/messi-psg-gettyimages-1430750043.jpg_554688468.jpg' },
-    { key: 5, name: 'Diogostoso', imagem: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-LGhdtcRG8Lk8LXe8GrEwzdRV_nim8jRsWfzsQPLMJB0v0nDkVqHJhb9fergRTYpzAdNq9Ee0GEnGvML7MTk5OyHGqUgTz-Kdhu26IL8T4YjU8sOBiYjVAwpWzCQIJvas65pPy-Z2D191646JAuJqc2_a2uRvZV9LCZRvIWZ3M3cyosSCKjNcmoo6WA/w640-h426/marco%20reus%20alemanha.jpg' },
-  
-  ]
-  return (
+    { key: 1, name: 'Minha conta', iconName: 'user' },
+    { key: 2, name: 'Geral', iconName: 'cog' },
+    { key: 3, name: 'Notificações', iconName: 'notifications' },
+    { key: 4, name: 'Personalização', iconName: 'brush' },
+    { key: 5, name: 'Segurança', iconName: 'shield' },
+    { key: 6, name: 'Idioma', iconName: 'language' },
+    { key: 7, name: 'Ajuda', iconName: 'help-circle' },
+    { key: 8, name: 'Sobre', iconName: 'information-circle' },
+  ];
 
-    <FlatList
-    data={data}
-    renderItem={({item}) => (
-        <ListItem name={item.name} funcao={item.funcao} imagem={item.imagem}/>
-        )}
-        keyExtractor={item => item.key}
-        style={styles.container}
+  const renderIcon = (iconName) => {
+    switch (iconName) {
+      case 'user':
+        return <FontAwesome name="user" size={30} color="black" />;
+      case 'cog':
+        return <Ionicons name="cog" size={30} color="black" />;
+      case 'notifications':
+        return <Ionicons name="notifications" size={30} color="black" />;
+      case 'brush':
+        return <Ionicons name="brush" size={30} color="black" />;
+      case 'shield':
+        return <Ionicons name="shield" size={30} color="black" />;
+      case 'language':
+        return <Ionicons name="language" size={30} color="black" />;
+      case 'help-circle':
+        return <Ionicons name="help-circle" size={30} color="black" />;
+      case 'information-circle':
+        return <Ionicons name="information-circle" size={30} color="black" />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.profileContainer}>
+        <Ionicons name="person-circle" size={100} color="black" />
+      </View>
+
+      <View style={styles.loginArea}>
+        <Text style={styles.loginText}>Bem-vindo, usuário!</Text>
+      </View>
+
+      <View style={styles.listContainer}>
+        <FlatList
+          data={data}
+          renderItem={({ item }) => (
+            <ListItem
+              name={item.name}
+              iconName={item.iconName}
+              renderIcon={renderIcon}
+            />
+          )}
+          keyExtractor={(item) => item.key}
         />
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    flex: 1,
+  },
+  profileContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 30,
+  },
+  loginArea: {
+    backgroundColor: '#f0f0f0',
+    padding: 20,
+    alignItems: 'center',
+  },
+  loginText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  listContainer: {
+    flex: 1,
+    maxHeight: '70%',
   },
 });
 
-export default Lista ;
+export default Lista;

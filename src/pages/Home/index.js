@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, ScrollView, Image, TextInput, TouchableOpacity,
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function () {
+export default function Info() {
     const [lista, setLista] = useState([
 
     ]);
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     info: {
         height: 80,
         paddingTop: 38,
-        backgroundColor: "coral",
+        backgroundColor: "#00BFFF",
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 20,
@@ -87,14 +87,14 @@ const styles = StyleSheet.create({
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderWidth: 1,
-        borderColor: "coral",
+        borderColor: "#00BFFF",
         borderRadius: 4,
         color: "black", // Definindo a cor do texto de entrada
     },
     button: {
         flexDirection: 'row',
         justifyContent: 'center',
-        backgroundColor: "coral",
+        backgroundColor: "#00BFFF",
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 4,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderWidth: 1,
         backgroundColor: "white",
-        borderColor: "coral",
+        borderColor: "#00BFFF",
         paddingHorizontal: 12,
         paddingVertical: 8,
         borderRadius: 4,
@@ -149,4 +149,3 @@ const styles = StyleSheet.create({
         left: 15
     },
 });
-

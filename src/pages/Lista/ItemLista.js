@@ -1,20 +1,13 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export  function ListItem(props) { 
-    console.log(props)
+export function ListItem(props) {
   return (
     <View style={styles.container}>
-        <View >
-            <Image 
-            source={{uri: props.imagem}}
-            style={styles.imagem}/>
-        </View>
-        <View style={styles.informacao}>
-            <Text style={styles.name}> {props.name} </Text>
-        </View>
-
+      <View style={styles.iconContainer}>{props.renderIcon(props.iconName)}</View>
+      <View style={styles.informacao}>
+        <Text style={styles.name}>{props.name}</Text>
+      </View>
     </View>
-
   );
 }
 
@@ -24,27 +17,19 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
   },
-
-  informacao: {
-    justifyContent: 'center'
-  },
-
-  imagem: {
-    borderRadius: 50,
-    backgroundColor: 'white',
-    height: 50,
-    width: 50,
+  iconContainer: {
     marginRight: 15,
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'center'
   },
-
+  informacao: {
+    justifyContent: 'center',
+  },
   name: {
     fontSize: 15,
     fontWeight: 'bold',
     marginBottom: 3,
   },
-
 });
 
 export default ListItem;
