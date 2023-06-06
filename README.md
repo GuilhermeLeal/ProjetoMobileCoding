@@ -1,6 +1,8 @@
-# ProjetoMobileCoding
- 
-# Game Discount App
+ # Desk Games App
+- **Lucas Nobre**
+- **Guilherme Leal**
+- **Leandro Manoel**
+
 
 ![App Logo](./Prints/download.png)
 
